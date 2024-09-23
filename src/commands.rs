@@ -1,6 +1,7 @@
 use crate::{cli::NetworkArgs, error::NetworkError, network_manager::NetworkManager};
 use log::{info, warn};
 use owo_colors::OwoColorize;
+
 pub async fn start_network_configuration(
 	network_manager: &NetworkManager,
 	args: &NetworkArgs,

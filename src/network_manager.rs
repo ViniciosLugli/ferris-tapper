@@ -1,16 +1,16 @@
 use futures_util::TryStreamExt;
 use log::{info, warn};
-use netlink_packet_route::link::LinkFlags;
-use netlink_packet_route::link::LinkMessage;
-use netlink_packet_route::tc::TcAttribute;
-use netlink_packet_route::tc::TcMessage;
+use netlink_packet_route::{
+	link::{LinkFlags, LinkMessage},
+	tc::{TcAttribute, TcMessage},
+};
 use rtnetlink::{new_connection, Handle};
 use sysctl::Sysctl;
 
-use crate::error::NetworkError;
-use crate::types::InterfaceStatus;
-use crate::types::QdiscInfo;
-use crate::types::QdiscStats;
+use crate::{
+	error::NetworkError,
+	types::{InterfaceStatus, QdiscInfo, QdiscStats},
+};
 
 pub struct NetworkManager {
 	handle: Handle,

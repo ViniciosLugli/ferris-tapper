@@ -24,7 +24,3 @@ Cargo.lock
 .vscode/
 .env
 rustfmt.toml
-
-# Added by cargo
-
-/target
