@@ -36,7 +36,22 @@ cargo install ferris-tapper --git https://github.com/ViniciosLugli/ferris-tapper
 
 Once installed, you can use `ferris-tapper` to set up, manage, and monitor network configurations.
 
-> **Note**: Is recommended to run the tool with `sudo` or as `root` to ensure the necessary permissions for network configuration.
+> **Note**: This tool requires `sudo` privileges to configure network interfaces and set up bridges.
+
+Quick tips on how to use the tool with root privileges after installation with `cargo`:
+
+```bash
+sudo $(which ferris-tapper)
+```
+
+Or you can create a symbolic link to the binary in a directory that is in the system's PATH:
+
+```bash
+sudo ln -s $(which ferris-tapper) /usr/local/bin/ferris-tapper
+
+#Now, you can use the tool with root privileges without specifying the full path:
+sudo ferris-tapper
+```
 
 ### Starting TAP Network Configuration
 
