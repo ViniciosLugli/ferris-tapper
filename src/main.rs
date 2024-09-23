@@ -9,10 +9,17 @@ use cli::{Cli, Commands};
 use commands::{show_network_status, start_network_configuration, stop_network_configuration};
 use env_logger;
 use network_manager::NetworkManager;
+use nix::unistd::geteuid;
+use std::process::exit;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
 	env_logger::init();
+
+	if !geteuid().is_root() {
+		eprintln!("🚫 This tool must be run as root!");
+		exit(1);
+	}
 
 	let args = Cli::parse();
 	let network_manager = NetworkManager::new().await?;

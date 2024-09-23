@@ -27,8 +27,10 @@ This is a Rust-based network tap tool designed to set up a bridge between two ne
 Ensure you system is a **Linux** based, this project is designed for Linux systems, leveraging the `rtnetlink` and `sysctl` utilities for network configuration.
 
 ```bash
-cargo install ferris-tapper
+cargo install ferris-tapper --git https://github.com/ViniciosLugli/ferris-tapper
 ```
+
+> **Note**: Currently, the tool is only available through GitHub because the [`rtnetlink`](https://github.com/rust-netlink/rtnetlink) crate has a pull request made by me that is not yet merged into the main repository(I can only use packages published in the publication). You can watch the PR at: [GitHub - rtnetlink](https://github.com/rust-netlink/rtnetlink/pull/79)
 
 ## Usage
 
