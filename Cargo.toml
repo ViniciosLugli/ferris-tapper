@@ -1,0 +1,28 @@
+[package]
+name = "ferris-tapper"
+version = "0.1.0"
+edition = "2021"
+authors = ["Vinicios Lugli <vinicioslugli@gmail.com>"]
+description = "A Rust-based network tap tool that configures interfaces and manages system settings on linux devices."
+license = "GPL-3.0"
+repository = "https://github.com/ViniciosLugli/ferris-tapper"
+readme = "README.md"
+keywords = ["tap", "bridge", "ethernet", "network", "cli"]
+categories = [
+	"command-line-interface",
+	"network-programming",
+	"os::linux-apis",
+	"development-tools::debugging",
+]
+
+[dependencies]
+log = "0.4.22"
+env_logger = "0.11.5"
+rtnetlink = { version = "0.14.1", git = "https://github.com/ViniciosLugli/rtnetlink" }
+sysctl = "0.6.0"
+tokio = { version = "1.40.0", features = ["full"] }
+clap = { version = "4.5.18", features = ["derive"] }
+futures-util = "0.3.30"
+thiserror = "1.0.64"
+netlink-packet-route = { version = "0.20" }
+owo-colors = "4.1.0"
